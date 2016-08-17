@@ -28,17 +28,17 @@
 #使用步骤
 
 ##一，添加类库
+
 compile 'com.lzy.net:okhttputils:1.6.7'
 compile 'com.lzy.net:okhttpserver:0.1.7' //扩展了下载管理和上传管理，根据需要添加
   
 ##二，全局配置
 一般在 Aplication，或者基类中，只需要调用一次即可，可以配置调试开关，全局的超时时间，公共的请求头和请求参数等信息
-public class GApp extends Application {
 
+public class GApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
         HttpHeaders headers = new HttpHeaders();
         headers.put("commonHeaderKey1", "commonHeaderValue1");    //所有的 header 都 不支持 中文
         headers.put("commonHeaderKey2", "commonHeaderValue2");
@@ -65,7 +65,8 @@ public class GApp extends Application {
 ##三，实现下载更新
 
 这里只贴出部分代码，详细代码可以查看项目里的MainActivity类
-case R.id.sure_text:
+
+
 initNotify();
 downloadInfo = downloadManager.getTaskByUrl(apkUrl);
 notifyLayout.setVisibility(View.GONE);
@@ -81,7 +82,7 @@ if (downloadInfo == null) {
 	download.setText("下载中");
 	downloadManager.addTask(apkUrl, listener);
 }
-break;
+
   
 博客地址： 
   
